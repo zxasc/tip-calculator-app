@@ -44,7 +44,6 @@ export default function App() {
         </form>
         <Summary appState={appState} resetAppState={resetAppState} />
       </main>
-      <button onClick={() => {console.log(appState)}}>Log State</button>
     </>
   )
 }
