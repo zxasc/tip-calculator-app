@@ -1,0 +1,56 @@
+@import './variables.scss';
+
+.container {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 6px;
+
+    label {
+        font-size: 16px;
+        color: $clr-dark-grayish-cyan;
+    }
+
+    input {
+        height: 48px;
+        font-size: 24px;
+        text-align: right;
+        color: $clr-very-dark-cyan;
+        padding: 6px 17px;
+        -moz-appearance: textfield;
+        background-color: $clr-very-light-grayish-cyan;
+        border: none;
+        border-radius: 5px;
+
+        &::placeholder {
+            color: $clr-very-dark-cyan;
+            opacity: 0.35;
+        }
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        &:focus {
+            outline: 2pt solid $clr-primary-cyan;
+        }
+    }
+
+    img {
+        position: absolute;
+        left: 17px;
+        pointer-events: none;
+    }
+
+    img.person_icon {
+        width: 13px;
+        bottom: 15px;  
+    }
+
+    img.dollar_icon {
+        width: 11px;
+        bottom: 16px;
+    }
+}
