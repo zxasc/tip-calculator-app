@@ -1,0 +1,32 @@
+@import './variables.scss';
+
+.button_container {
+    display: grid;
+    grid-template-columns: repeat(3, 117px);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 14px;
+    row-gap: 16px;
+
+    button {
+        height: 48px;
+        padding: 0;
+        margin: 0;
+        font-size: 24px;
+        color: $clr-white;
+        background-color: $clr-very-dark-cyan;
+        border-radius: 5px;
+        border: none;
+        transition: 0.2s all ease-in;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #9FE8DF;
+            color: $clr-very-dark-cyan;
+        }
+
+        &:focus {
+            background-color: $clr-primary-cyan;
+            color: $clr-very-dark-cyan;
+        }
+    }
+}
