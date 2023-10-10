@@ -30,7 +30,15 @@ main {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    gap: 48px;
     background-color: $clr-white;
+}
+
+form {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 40px;
+    padding: 16px;
 }
 
 @media only screen and (max-width: 720px) {
