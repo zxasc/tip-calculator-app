@@ -10,10 +10,15 @@ export default function App() {
 
   return (
     <>
-      <BillInput />
-      <TipInput />
-      <PeopleInput />
-      <Summary />
+      <img className='logo' src="/logo.svg" alt="splitter logo" />
+      <main>
+        <form className='inner-container'>
+          <BillInput />
+          <TipInput />
+          <PeopleInput />
+        </form>
+        <Summary />
+      </main>
     </>
   )
 }

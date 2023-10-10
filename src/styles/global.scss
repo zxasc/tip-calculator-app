@@ -19,3 +19,41 @@ html, body, #root {
     margin: 0;
     min-height: 100svh;
 }
+
+#root {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 85px;
+    background-color: $clr-light-grayish-cyan;
+}
+
+main {
+    max-width: 920px;
+    width: 90%;
+    padding: 32px;
+    border-radius: 25px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    background-color: $clr-white;
+}
+
+@media only screen and (max-width: 720px) {
+    #root {
+        justify-content: flex-start;
+        gap: 40px;
+    }
+
+    main {
+        width: 100%;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        flex-flow: column nowrap;
+    }
+
+    .logo {
+        margin-top: 50px;
+    }
+}

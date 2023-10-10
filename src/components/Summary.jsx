@@ -1,5 +1,7 @@
 export default function Summary() {
     return (
-        <h1>Summary</h1>
+        <div className='inner-container'>
+            <h1>Summary</h1>
+        </div>
     )
 }
