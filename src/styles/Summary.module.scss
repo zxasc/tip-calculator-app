@@ -1,0 +1,57 @@
+@import './variables.scss';
+
+.container {
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: $clr-very-dark-cyan;
+    border-radius: 15px;
+
+    .inner {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    button {
+        margin-top: auto;
+        height: 48px;
+        font-size: 20px;
+        color: $clr-very-dark-cyan;
+        background-color: #0D686D;
+        border: none;
+        border-radius: 5px;
+        cursor: not-allowed;
+        transition: all 0.2 ease-in;
+    }
+
+    button.active {
+        background-color: $clr-primary-cyan;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #9fe8df;
+        }
+    }
+}
+
+h4, h3, h2 {
+    margin: 0;
+}
+
+h2 {
+    color: $clr-primary-cyan;
+    font-size: 48px;
+}
+
+h3 {
+    color: $clr-white;
+    font-size: 16px;
+}
+
+h4 {
+    color: $clr-grayish-cyan;
+    font-size: 13px;
+}
