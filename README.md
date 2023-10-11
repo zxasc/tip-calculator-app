@@ -6,8 +6,9 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
   - [Links](#links)
+  - [Screenshot](#screenshot)
+- [Local setup](#local-setup)
 - [Built with](#built-with)
 - [Known bugs](#known-bugs)
 - [Author](#author)
@@ -22,6 +23,11 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - Calculate the correct tip and total cost of the bill per person
 
+### Links
+
+- Solution at [Github](https://github.com/zxasc/tip-calculator-app)
+- Live Site at [Netlify](https://melodious-alfajores-080ba9.netlify.app/)
+
 ### Screenshots
 
 ![Desktop](./screenshots/tip-calculator-desktop.png)
@@ -29,10 +35,23 @@ Users should be able to:
 ![Mobile](./screenshots/tip-calculator-mobile.png)
 
 
-### Links
+## Local setup
 
-- Solution at [Github](https://github.com/zxasc/tip-calculator-app)
-- Live Site at [Netlify](https://melodious-alfajores-080ba9.netlify.app/)
+Firstly, clone the repo:
+```bash
+$ git clone https://github.com/zxasc/tip-calculator-app.git
+$ cd tip-calculator-app/
+```
+
+Then install dependancies:
+```bash
+$ npm install 
+```
+
+Finally, you can use this command to run local version with dev dependancies:
+```bash
+$ npm run dev 
+```
 
 ## Built with
 
