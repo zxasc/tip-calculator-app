@@ -59,6 +59,11 @@ h4 {
     color: $clr-grayish-cyan;
     font-size: 13px;
 }
+@media only screen and (max-width: 1024px) {
+    h2 {
+        font-size: 36px;
+    }
+}
 
 @media only screen and (max-width: 720px) {
     .container {
@@ -69,7 +74,6 @@ h4 {
     }
     
     h2 {
-        color: $clr-primary-cyan;
         font-size: 32px;
     }
 }
