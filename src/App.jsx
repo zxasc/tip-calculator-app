@@ -27,7 +27,6 @@ export default function App() {
         </form>
         <Summary appState={{currentBill, currentTip, currentNumberOfPeople}} resetAppState={resetAppState} />
       </main>
-      <button onClick={() => console.log({currentBill, currentTip, currentNumberOfPeople})}>Click me</button>
     </>
   )
 }
