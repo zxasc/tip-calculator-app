@@ -17,7 +17,7 @@ function TipInput({ currentTip, setTip }) {
                 <button type='button' onClick={() => handleTipChange(15)}>15%</button>
                 <button type='button' onClick={() => handleTipChange(25)}>25%</button>
                 <button type='button' onClick={() => handleTipChange(50)}>50%</button>
-                <input className={currentTip <= 0 ? formInput.invalid : ""} type="number" id="custom-tip" min={1} max={100} placeholder='Custom' onChange={() => handleTipChange(event.target.value)} />
+                <input className={currentTip <= 0 ? formInput.invalid : ""} type="number" id="custom-tip" min={1} max={100} placeholder='Custom' onChange={() => handleTipChange(event.target.value)} value={currentTip}/>
             </div>
         </section>
     )
