@@ -1,21 +1,29 @@
+import PropTypes from 'prop-types'
 import summary from '../styles/Summary.module.scss'
 
-export default function Summary({ appState, resetAppState }) {
+function Summary({ appState, resetAppState }) {
+    const checkInputValues = () => {
+        if((appState.currentBill <= 0 || appState.currentTip <= 0 || appState.currentNumberOfPeople <= 0) || (appState.currentBill === undefined || appState.currentTip === undefined || appState.currentNumberOfPeople === undefined)){
+            return false
+        }
+        return true
+    }
+
     const getTipAmount = () => {
-        const tipPercentage = appState.tip / 100;
-        const result = (tipPercentage * appState.bill) / appState.people
-        if(Number.isNaN(result)) {
+        if(!checkInputValues()) {
             return "0.00";
         }
+        const tipPercentage = appState.currentTip / 100;
+        const result = (tipPercentage * appState.currentBill) / appState.currentNumberOfPeople
         // Make sure that the number always has 2 decimal places
         return (Math.round(result * 100) / 100).toFixed(2);
     }
 
     const getTotal = () => {
-        if(appState.bill <= 0 || appState.tip <= 0 || appState.people <= 0){
-            return "0.00"
+        if(!checkInputValues()) {
+            return "0.00";
         }
-        const totalNoTip = appState.bill / appState.people;
+        const totalNoTip = appState.currentBill / appState.currentNumberOfPeople;
         const result = totalNoTip + Number(getTipAmount());
         // Make sure that the number always has 2 decimal places
         return (Math.round(result * 100) / 100).toFixed(2);
@@ -41,7 +49,14 @@ export default function Summary({ appState, resetAppState }) {
                 <h2>${getTotal()}</h2>
             </div>
 
-            <button className={appState.bill > 0 ? summary.active : ""} onClick={resetAppState}>RESET</button>
+            <button className={checkInputValues() ? summary.active : ""} onClick={resetAppState}>RESET</button>
         </section>
     )
 }
+
+Summary.propTypes = {
+    appState: PropTypes.object,
+    resetAppState: PropTypes.func
+}
+
+export default Summary
