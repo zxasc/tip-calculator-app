@@ -15,8 +15,7 @@ function Summary({ appState, resetAppState }) {
         }
         const tipPercentage = appState.currentTip / 100;
         const result = (tipPercentage * appState.currentBill) / appState.currentNumberOfPeople
-        // Make sure that the number always has 2 decimal places
-        return (Math.round(result * 100) / 100).toFixed(2);
+        return result.toFixed(2);
     }
 
     const getTotal = () => {
@@ -25,8 +24,7 @@ function Summary({ appState, resetAppState }) {
         }
         const totalNoTip = appState.currentBill / appState.currentNumberOfPeople;
         const result = totalNoTip + Number(getTipAmount());
-        // Make sure that the number always has 2 decimal places
-        return (Math.round(result * 100) / 100).toFixed(2);
+        return result.toFixed(2);
     }
 
     
