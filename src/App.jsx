@@ -6,14 +6,14 @@ import PeopleInput from './components/PeopleInput'
 import Summary from './components/Summary'
 
 export default function App() {
-  const [currentBill, setCurrentBill] = useState(0);
-  const [currentTip, setCurrentTip] = useState(0);
-  const [currentNumberOfPeople, setCurrentNumberOfPeople] = useState(0);
+  const [currentBill, setCurrentBill] = useState('');
+  const [currentTip, setCurrentTip] = useState('');
+  const [currentNumberOfPeople, setCurrentNumberOfPeople] = useState('');
 
   const resetAppState = () => {
-    setCurrentBill(0);
-    setCurrentTip(0);
-    setCurrentNumberOfPeople(0);
+    setCurrentBill("0");
+    setCurrentTip("0");
+    setCurrentNumberOfPeople("0");
   }
 
   return (
@@ -27,6 +27,7 @@ export default function App() {
         </form>
         <Summary appState={{currentBill, currentTip, currentNumberOfPeople}} resetAppState={resetAppState} />
       </main>
+      <button onClick={() => console.log({currentBill, currentTip, currentNumberOfPeople})}>Click me</button>
     </>
   )
 }
