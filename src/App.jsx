@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './styles/global.scss'
+import app from './styles/App.module.scss'
 import BillInput from './components/BillInput'
 import TipInput from './components/TipInput'
 import PeopleInput from './components/PeopleInput'
@@ -18,8 +19,8 @@ export default function App() {
 
   return (
     <>
-      <img className='logo' src="/logo.svg" alt="splitter logo" />
-      <main>
+      <img className={app.logo} src="/logo.svg" alt="splitter logo" />
+      <main className={app.container}>
         <form className='inner-container'>
           <BillInput currentBill={currentBill} setBill={setCurrentBill} />
           <TipInput currentTip= {currentTip} setTip={setCurrentTip} />
