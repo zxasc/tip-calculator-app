@@ -49,7 +49,7 @@ function Summary({ appState, resetAppState }) {
                 <h2>${getTotal()}</h2>
             </div>
 
-            <button className={checkInputValues() ? summary.active : ""} onClick={resetAppState}>RESET</button>
+            <button className={checkInputValues() ? summary.active : ""} disabled={!checkInputValues()} onClick={resetAppState}>RESET</button>
         </section>
     )
 }
