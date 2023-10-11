@@ -6,31 +6,14 @@ import PeopleInput from './components/PeopleInput'
 import Summary from './components/Summary'
 
 export default function App() {
-  const [appState, setAppState] = useState({bill: undefined, tip: undefined, people: undefined})
-
-  const setBill = (value) => {
-    setAppState({
-      ...appState,
-      bill: value
-    });
-  };
-
-  const setTip = (value) => {
-    setAppState({
-      ...appState,
-      tip: value
-    });
-  };
-
-  const setNumberOfPeople = (value) => {
-    setAppState({
-      ...appState,
-      people: value
-    });
-  };
+  const [currentBill, setCurrentBill] = useState(0);
+  const [currentTip, setCurrentTip] = useState(0);
+  const [currentNumberOfPeople, setCurrentNumberOfPeople] = useState(0);
 
   const resetAppState = () => {
-    setAppState({bill: 0, tip: 0, people: 0})
+    setCurrentBill(0);
+    setCurrentTip(0);
+    setCurrentNumberOfPeople(0);
   }
 
   return (
@@ -38,11 +21,11 @@ export default function App() {
       <img className='logo' src="/logo.svg" alt="splitter logo" />
       <main>
         <form className='inner-container'>
-          <BillInput currentBill={appState.bill} setBill={setBill} />
-          <TipInput currentTip= {appState.tip} setTip={setTip} />
-          <PeopleInput currentNumberOfPeople={appState.people} setNumberOfPeople={setNumberOfPeople} />
+          <BillInput currentBill={currentBill} setBill={setCurrentBill} />
+          <TipInput currentTip= {currentTip} setTip={setCurrentTip} />
+          <PeopleInput currentNumberOfPeople={currentNumberOfPeople} setNumberOfPeople={setCurrentNumberOfPeople} />
         </form>
-        <Summary appState={appState} resetAppState={resetAppState} />
+        <Summary appState={{currentBill, currentTip, currentNumberOfPeople}} resetAppState={resetAppState} />
       </main>
     </>
   )
