@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types'
 import formInput from '../styles/FormInputs.module.scss'
 import formSelector from '../styles/FormSelector.module.scss'
 
-export default function TipInput({ setTip }) {
+function TipInput({ currentTip, setTip }) {
     const handleTipChange = (value) => {
         setTip(Number(value))
     }
@@ -16,8 +17,15 @@ export default function TipInput({ setTip }) {
                 <button type='button' onClick={() => handleTipChange(15)}>15%</button>
                 <button type='button' onClick={() => handleTipChange(25)}>25%</button>
                 <button type='button' onClick={() => handleTipChange(50)}>50%</button>
-                <input type="number" id="custom-tip" min={1} max={100} placeholder='Custom' onChange={() => handleTipChange(event.target.value)} />
+                <input className={currentTip <= 0 ? formInput.invalid : ""} type="number" id="custom-tip" min={1} max={100} placeholder='Custom' onChange={() => handleTipChange(event.target.value)} />
             </div>
         </section>
     )
 }
+
+TipInput.propTypes = {
+    currentTip: PropTypes.number,
+    setTip: PropTypes.func
+}
+
+export default TipInput

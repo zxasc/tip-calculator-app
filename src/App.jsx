@@ -6,7 +6,7 @@ import PeopleInput from './components/PeopleInput'
 import Summary from './components/Summary'
 
 export default function App() {
-  const [appState, setAppState] = useState({bill: undefined, tip: 0, people: undefined})
+  const [appState, setAppState] = useState({bill: undefined, tip: undefined, people: undefined})
 
   const setBill = (value) => {
     setAppState({
@@ -39,7 +39,7 @@ export default function App() {
       <main>
         <form className='inner-container'>
           <BillInput currentBill={appState.bill} setBill={setBill} />
-          <TipInput setTip={setTip} />
+          <TipInput currentTip= {appState.tip} setTip={setTip} />
           <PeopleInput currentNumberOfPeople={appState.people} setNumberOfPeople={setNumberOfPeople} />
         </form>
         <Summary appState={appState} resetAppState={resetAppState} />
