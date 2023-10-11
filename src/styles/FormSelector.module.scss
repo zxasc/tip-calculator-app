@@ -2,7 +2,7 @@
 
 .button_container {
     display: grid;
-    grid-template-columns: repeat(3, 117px);
+    grid-template-columns: repeat(3, minmax(0, 117px));
     grid-template-rows: repeat(2, 1fr);
     column-gap: 14px;
     row-gap: 16px;
@@ -24,7 +24,9 @@
             color: $clr-very-dark-cyan;
         }
 
-        &:focus {
+        &:focus,
+        &.active,
+        &:target {
             background-color: $clr-primary-cyan;
             color: $clr-very-dark-cyan;
         }

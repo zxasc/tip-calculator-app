@@ -1,10 +1,13 @@
 @import './variables.scss';
 
 .container {
-    width: 100%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 50%;
+    min-width: 325px;
     padding: 40px;
     display: flex;
-    flex-flow: column nowrap;
+    flex-direction: column;
     background-color: $clr-very-dark-cyan;
     border-radius: 15px;
 
