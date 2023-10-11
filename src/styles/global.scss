@@ -59,6 +59,10 @@ form {
         flex-flow: column nowrap;
     }
 
+    form {
+        max-width: none;
+    }
+
     .logo {
         margin-top: 50px;
     }
