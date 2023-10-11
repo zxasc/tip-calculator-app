@@ -10,6 +10,7 @@
     flex-direction: column;
     background-color: $clr-very-dark-cyan;
     border-radius: 15px;
+    overflow: hidden;
 
     .inner {
         display: flex;
@@ -57,4 +58,18 @@ h3 {
 h4 {
     color: $clr-grayish-cyan;
     font-size: 13px;
+}
+
+@media only screen and (max-width: 720px) {
+    .container {
+        padding: 24px;
+        padding-top: 37px;
+        gap: 20px;
+        min-width: none;
+    }
+    
+    h2 {
+        color: $clr-primary-cyan;
+        font-size: 32px;
+    }
 }
