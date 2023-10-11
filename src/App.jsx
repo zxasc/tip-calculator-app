@@ -6,7 +6,7 @@ import PeopleInput from './components/PeopleInput'
 import Summary from './components/Summary'
 
 export default function App() {
-  const [appState, setAppState] = useState({bill: 0, tip: 0, people: 0})
+  const [appState, setAppState] = useState({bill: undefined, tip: 0, people: undefined})
 
   const setBill = (value) => {
     setAppState({
@@ -38,9 +38,9 @@ export default function App() {
       <img className='logo' src="/logo.svg" alt="splitter logo" />
       <main>
         <form className='inner-container'>
-          <BillInput setBill={setBill} />
+          <BillInput currentBill={appState.bill} setBill={setBill} />
           <TipInput setTip={setTip} />
-          <PeopleInput setNumberOfPeople={setNumberOfPeople} />
+          <PeopleInput currentNumberOfPeople={appState.people} setNumberOfPeople={setNumberOfPeople} />
         </form>
         <Summary appState={appState} resetAppState={resetAppState} />
       </main>

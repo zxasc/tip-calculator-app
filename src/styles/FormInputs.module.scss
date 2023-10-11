@@ -7,8 +7,15 @@
     gap: 6px;
 
     label {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         font-size: 16px;
         color: $clr-dark-grayish-cyan;
+
+        span {
+            color: red;
+        }
     }
 
     input {
@@ -21,6 +28,7 @@
         background-color: $clr-very-light-grayish-cyan;
         border: none;
         border-radius: 5px;
+        transition: all 0.2s ease-in;
 
         &::placeholder {
             color: $clr-very-dark-cyan;
@@ -36,6 +44,10 @@
         &:focus {
             outline: 2pt solid $clr-primary-cyan;
         }
+    }
+
+    input.invalid {
+        outline: 2pt solid red;
     }
 
     img {
